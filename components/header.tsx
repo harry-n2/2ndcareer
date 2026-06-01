@@ -4,15 +4,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { Container } from './ui/container';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, BookOpen, BookText } from 'lucide-react';
 
-const navItems = [
+const anchorItems = [
     { label: 'Concept', href: '#concept' },
     { label: 'Curriculum', href: '#curriculum' },
     { label: 'Team', href: '#mentors' },
     { label: 'FAQ', href: '#faq' },
-    { label: '電子書籍', href: '/ebook' },
-    { label: '電子マンガ', href: '/manga' },
+];
+
+const featureItems = [
+    { label: '電子書籍', href: '/ebook', icon: BookOpen },
+    { label: '電子マンガ', href: '/manga', icon: BookText },
 ];
 
 export default function Header() {
@@ -30,26 +33,40 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8">
-                    {navItems.map((item) => (
+                <nav className="hidden md:flex items-center gap-6">
+                    {anchorItems.map((item) => (
                         <Link
                             key={item.label}
                             href={item.href}
-                            className="text-sm font-bold uppercase tracking-widest text-white/80 hover:text-accent transition-colors"
+                            className="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-accent transition-colors"
                         >
                             {item.label}
+                        </Link>
+                    ))}
+
+                    <span className="h-5 w-px bg-white/15" />
+
+                    {featureItems.map((item) => (
+                        <Link
+                            key={item.label}
+                            href={item.href}
+                            className="group inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-black text-primary shadow-lg shadow-accent/30 ring-2 ring-accent/40 transition-all hover:scale-105 hover:bg-yellow-300"
+                        >
+                            <item.icon size={16} className="shrink-0" />
+                            {item.label}
+                            <span className="ml-1 rounded-full bg-primary/15 px-1.5 py-0.5 text-[10px] font-bold leading-none">無料</span>
                         </Link>
                     ))}
                 </nav>
 
                 {/* Action */}
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden md:flex items-center">
                     <a
                         href="https://ljpbqpwr5vbk.jp.larksuite.com/scheduler/96c06a2209d4e79e"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Button variant="primary" size="sm">
+                        <Button variant="ghost" size="sm" className="border border-white/30 text-white hover:bg-white/10 hover:text-accent">
                             無料相談・資料請求
                         </Button>
                     </a>
@@ -67,13 +84,29 @@ export default function Header() {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="md:hidden bg-primary border-t border-white/10">
-                    <Container className="py-6 space-y-4">
-                        {navItems.map((item) => (
+                    <Container className="py-6 space-y-3">
+                        {/* 目立つ電子書籍・電子マンガを最上部に */}
+                        <div className="grid grid-cols-2 gap-3">
+                            {featureItems.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-accent px-4 py-3 text-base font-black text-primary shadow-lg"
+                                >
+                                    <item.icon size={18} className="shrink-0" />
+                                    {item.label}
+                                </Link>
+                            ))}
+                        </div>
+                        <p className="text-center text-xs font-bold text-accent">▲ 無料で読めます</p>
+
+                        {anchorItems.map((item) => (
                             <Link
                                 key={item.label}
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block text-lg font-bold text-white/80 hover:text-accent transition-colors py-2"
+                                className="block text-lg font-bold text-white/80 hover:text-accent transition-colors py-1"
                             >
                                 {item.label}
                             </Link>
@@ -82,9 +115,9 @@ export default function Header() {
                             href="https://ljpbqpwr5vbk.jp.larksuite.com/scheduler/96c06a2209d4e79e"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block mt-4"
+                            className="block mt-2"
                         >
-                            <Button variant="primary" size="md" className="w-full">
+                            <Button variant="ghost" size="md" className="w-full border border-white/30 text-white">
                                 無料相談・資料請求
                             </Button>
                         </a>
