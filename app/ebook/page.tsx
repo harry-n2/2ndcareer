@@ -26,6 +26,11 @@ function Chapter({ id, kicker, title, sub, children }: { id: string; kicker: str
             <h2 className="text-2xl font-black leading-tight text-primary md:text-3xl">{title}</h2>
             {sub ? <p className="mt-2 text-base font-bold text-slate-500">{sub}</p> : null}
             {children}
+            <div className="mt-12 text-center">
+                <a href="#top" className="inline-flex items-center gap-2 rounded-full border border-primary/20 px-6 py-2.5 text-sm font-bold text-primary transition-colors hover:border-accent hover:bg-primary hover:text-accent">
+                    ↑ トップに戻る
+                </a>
+            </div>
         </section>
     );
 }
@@ -36,7 +41,7 @@ function P({ children }: { children: React.ReactNode }) {
 
 export default function EbookPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main id="top" className="min-h-screen bg-white">
             {/* Top bar */}
             <div className="sticky top-0 z-50 border-b border-white/10 bg-primary/95 text-white backdrop-blur-sm">
                 <Container className="flex h-16 items-center justify-between">
