@@ -8,7 +8,7 @@ const members = [
         name: '西野 直哉',
         role: '代表 / 事業者',
         org: 'ワールドトレードネクスト',
-        image: '/2ndcareer/profile-nishino.jpg',
+        image: '/2ndcareer/profile-nishino.png',
         credentials: [
             '国際営業・貿易業務 約25年',
             'AI講師・AIマーケティング',
@@ -63,7 +63,7 @@ export default function Profile() {
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             className="group"
                         >
-                            <div className="mx-auto h-48 w-48 overflow-hidden rounded-full bg-slate-200 mb-6 ring-4 ring-accent/20">
+                            <div className="mx-auto h-48 w-48 overflow-hidden rounded-full bg-transparent mb-6 ring-4 ring-accent/20">
                                 <img
                                     src={member.image}
                                     alt=""
