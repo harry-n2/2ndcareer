@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/2ndcareer/:path*", "destination": "/:path*" }
+  ]
+}
