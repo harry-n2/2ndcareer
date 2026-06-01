@@ -7,18 +7,18 @@ export const metadata = {
     description: 'AIが経験を90日で講座に変える。引退に揺れる選手の物語とともに読む、アスリートのためのセカンドキャリア起業入門。',
 };
 
-function MangaPair({ a, b, alt }: { a: string; b: string; alt: string }) {
+function MangaPair({ a, b, alt, ratio = '1086 / 1448' }: { a: string; b: string; alt: string; ratio?: string }) {
     return (
         <div className="my-10 flex flex-col items-center gap-3">
-            <img src={`/2ndcareer/manga/${a}.webp`} alt={`${alt} 1`} loading="lazy" className="h-auto w-full max-w-[560px] rounded-sm shadow-xl shadow-black/10 ring-1 ring-slate-200" />
-            <img src={`/2ndcareer/manga/${b}.webp`} alt={`${alt} 2`} loading="lazy" className="h-auto w-full max-w-[560px] rounded-sm shadow-xl shadow-black/10 ring-1 ring-slate-200" />
+            <img src={`/2ndcareer/manga/${a}.webp`} alt={`${alt} 1`} loading="lazy" style={{ aspectRatio: ratio }} className="h-auto w-full max-w-[560px] rounded-sm shadow-xl shadow-black/10 ring-1 ring-slate-200" />
+            <img src={`/2ndcareer/manga/${b}.webp`} alt={`${alt} 2`} loading="lazy" style={{ aspectRatio: ratio }} className="h-auto w-full max-w-[560px] rounded-sm shadow-xl shadow-black/10 ring-1 ring-slate-200" />
         </div>
     );
 }
 
-function Chapter({ kicker, title, sub, children }: { kicker: string; title: string; sub?: string; children: React.ReactNode }) {
+function Chapter({ id, kicker, title, sub, children }: { id: string; kicker: string; title: string; sub?: string; children: React.ReactNode }) {
     return (
-        <section className="mx-auto max-w-[44rem] px-1 pt-16">
+        <section id={id} className="mx-auto max-w-[44rem] px-1 pt-16 scroll-mt-24">
             <div className="mb-2 flex items-center gap-3">
                 <span className="h-[2px] w-10 bg-accent" />
                 <span className="text-sm font-bold uppercase tracking-widest text-accent">{kicker}</span>
@@ -66,7 +66,7 @@ export default function EbookPage() {
                     </div>
                 </Container>
                 <div className="mx-auto flex max-w-[420px] justify-center px-4 pb-14">
-                    <img src="/2ndcareer/manga/cover.webp" alt="表紙" className="h-auto w-full rounded-sm shadow-2xl shadow-black/40" />
+                    <img src="/2ndcareer/manga/cover.webp" alt="表紙" style={{ aspectRatio: '992 / 1586' }} className="h-auto w-full rounded-sm shadow-2xl shadow-black/40" />
                 </div>
             </div>
 
@@ -81,18 +81,18 @@ export default function EbookPage() {
                         </div>
                         <h2 className="text-2xl font-black text-primary md:text-3xl">もくじ</h2>
                         <ol className="mt-6 space-y-3 text-slate-700">
-                            <li>はじめに</li>
-                            <li>第1章　引退の日に気づいた現実。セカンドキャリアの壁</li>
-                            <li>第2章　あなたの競技経験は、売れる商品だ。ゼロから始めた男の話</li>
-                            <li>第3章　AIが経験を90日で講座に変える。KIWAMI 15ステップ</li>
-                            <li>第4章　なぜ、今こそ電子書籍を出すのか。ノーリスクで信頼と集客を生む方法</li>
-                            <li>第5章　教える側から、仕組みを持つ側へ。競技人生は終わらない</li>
-                            <li>おわりに</li>
+                            <li><a href="#intro" className="transition-colors hover:text-accent">はじめに</a></li>
+                            <li><a href="#ch1" className="transition-colors hover:text-accent">第1章　引退の日に気づいた現実。セカンドキャリアの壁</a></li>
+                            <li><a href="#ch2" className="transition-colors hover:text-accent">第2章　あなたの競技経験は、売れる商品だ。ゼロから始めた男の話</a></li>
+                            <li><a href="#ch3" className="transition-colors hover:text-accent">第3章　AIが経験を90日で講座に変える。KIWAMI 15ステップ</a></li>
+                            <li><a href="#ch4" className="transition-colors hover:text-accent">第4章　なぜ、今こそ電子書籍を出すのか。ノーリスクで信頼と集客を生む方法</a></li>
+                            <li><a href="#ch5" className="transition-colors hover:text-accent">第5章　教える側から、仕組みを持つ側へ。競技人生は終わらない</a></li>
+                            <li><a href="#outro" className="transition-colors hover:text-accent">おわりに</a></li>
                         </ol>
                     </section>
 
                     {/* はじめに */}
-                    <Chapter kicker="Prologue" title="はじめに">
+                    <Chapter id="intro" kicker="Prologue" title="はじめに">
                         <MangaPair a="intro-1" b="intro-2" alt="はじめに" />
                         <P>正直に言わせてください。この本は、「自分には競技しかなかった」と一度でも感じたことのある、あなたのために書きました。</P>
                         <P>現役のころ、あなたは毎日ボールを追い、体を追い込み、勝つためだけに時間を使ってきたと思います。仲間と笑い、悔しさで眠れない夜を越え、応援してくれる人の顔を思い浮かべながらピッチに立ってきた。その日々は、まぎれもなく本物です。けれど、引退という二文字が近づいてきたとき、多くの選手が同じことを口にします。自分には、これしかなかった、と。</P>
@@ -106,7 +106,7 @@ export default function EbookPage() {
                     </Chapter>
 
                     {/* 第1章 */}
-                    <Chapter kicker="Chapter 1" title="引退の日に気づいた現実" sub="セカンドキャリアの壁">
+                    <Chapter id="ch1" kicker="Chapter 1" title="引退の日に気づいた現実" sub="セカンドキャリアの壁">
                         <MangaPair a="1" b="2" alt="第1章" />
                         <P>ロッカールームの照明が、いつもより暗く感じる夜があります。試合に負けた日でも、ケガをした日でもない。来季の話が、もう来ないかもしれない。そう気づいてしまった日です。</P>
                         <P>里見駿が立っていたのは、まさにそんな夜のロッカールームでした。壁にかけた背番号7のユニフォームを見つめながら、彼は思います。十二年間、ボールだけを追ってきた。引退したら、自分には何が残るんだろう、と。この問いは、彼ひとりのものではありません。競技に人生を捧げた人ほど、引退の瞬間に、大きな空白と向き合うことになります。</P>
@@ -121,7 +121,7 @@ export default function EbookPage() {
                     </Chapter>
 
                     {/* 第2章 */}
-                    <Chapter kicker="Chapter 2" title="あなたの競技経験は、売れる商品だ" sub="ゼロから始めた男の話">
+                    <Chapter id="ch2" kicker="Chapter 2" title="あなたの競技経験は、売れる商品だ" sub="ゼロから始めた男の話">
                         <MangaPair a="3" b="4" alt="第2章" />
                         <P>落ち込んでいた里見が、ある日、ひとりの経営者と向き合うことになります。明るいカフェで、その人は身を乗り出して、こう言いました。その十二年、売れる講座に化けますよ、と。</P>
                         <P>里見は驚きます。自分の経験が、商品に。そう、まさにこの発想の転換こそが、セカンドキャリアの最初の鍵です。多くの人は、商品と聞くと、形のあるモノや、特別な資格を思い浮かべます。けれどいまの時代は、経験や知識そのものが、もっとも価値の高い商品になります。これをコンテンツビジネスと呼びます。</P>
@@ -138,7 +138,7 @@ export default function EbookPage() {
                     </Chapter>
 
                     {/* 第3章 */}
-                    <Chapter kicker="Chapter 3" title="AIが経験を90日で講座に変える" sub="KIWAMI 15ステップ">
+                    <Chapter id="ch3" kicker="Chapter 3" title="AIが経験を90日で講座に変える" sub="KIWAMI 15ステップ">
                         <MangaPair a="5" b="6" alt="第3章" />
                         <P>経験が商品になるのは分かった。でも、講座を作るなんて専門家じゃないと無理でしょう。里見も、最初は同じことを考えていました。ところが、ノートパソコンの画面を見せられて、彼の表情が変わります。そこにあったのは、高単価講座・構築エンジン 極、という一つのAIツールでした。</P>
                         <P>経営者は、笑顔でこう言います。AIが、君の経験を九十日で講座に変える。集客は、ツールが自動で回す。里見の口から、思わず言葉がこぼれます。教える側から、と。</P>
@@ -176,8 +176,8 @@ export default function EbookPage() {
                     </Chapter>
 
                     {/* 第4章 */}
-                    <Chapter kicker="Chapter 4" title="なぜ、今こそ電子書籍を出すのか" sub="ノーリスクで信頼と集客を生む方法">
-                        <MangaPair a="9" b="10" alt="第4章" />
+                    <Chapter id="ch4" kicker="Chapter 4" title="なぜ、今こそ電子書籍を出すのか" sub="ノーリスクで信頼と集客を生む方法">
+                        <MangaPair a="9" b="10" alt="第4章" ratio="975 / 1614" />
                         <P>里見が講座の形を作りはじめたころ、私はもう一つの武器を差し出しました。講座を作ったら、次は本だ、と。里見は戸惑います。本ですか、文章なんて、まともに書いたこともないのに。けれど私は、にやりと笑って続けました。お金もリスクもかからない。本は、君の代わりに二十四時間働く名刺になるんだ、と。</P>
                         <P>この章では、なぜ私が、講座を作るすべての元アスリートに、電子書籍を出すことを強くすすめるのか、その理由を正直にお話しします。先に言ってしまえば、電子書籍は、いちばん安く、いちばんリスクが低く、それでいて一生モノの資産になる、現代のセカンドキャリアにおける最強の武器の一つだからです。</P>
                         <P>まず、お金とリスクの話から。出版と聞くと、多くの人が、何百万円もかかるのでは、売れ残ったらどうしよう、と身構えます。けれど電子書籍は違います。費用は、ほとんどかかりません。紙の本のような印刷代も製本代もいらず、アマゾンの仕組みを使えば、出版そのものの初期費用は、実質ゼロから始められます。在庫を抱える必要もありません。一冊も刷らずに、データだけで世界中に届けられるからです。そしてこれは意外と知られていませんが、返本が起きません。紙の出版の世界では、売れ残った本が書店から大量に戻ってくる、返本という大きなリスクがあります。電子書籍には、そもそもそれが存在しない。在庫のリスクも、返本のリスクもゼロ。これが、出版を、こわいものから気軽な一歩へと変えてくれるのです。</P>
@@ -193,7 +193,7 @@ export default function EbookPage() {
                     </Chapter>
 
                     {/* 第5章 */}
-                    <Chapter kicker="Chapter 5" title="教える側から、仕組みを持つ側へ" sub="競技人生は終わらない">
+                    <Chapter id="ch5" kicker="Chapter 5" title="教える側から、仕組みを持つ側へ" sub="競技人生は終わらない">
                         <MangaPair a="7" b="8" alt="第5章" />
                         <P>里見が、ノートパソコンに向かって指示を出すと、画面には次々と成果物が立ち上がっていきました。販売ページの案、講座の台本の案、SNS投稿の案。彼は思わず声を上げます。指示を出すだけで、形になっていく。自分にも、作れるんだ、と。</P>
                         <P>この、自分にも作れるんだ、という実感こそが、セカンドキャリアでいちばん大きな転換点です。人は、頭で、できるかもしれない、と思っているうちは動けません。けれど、一度でも、自分の手で形にできたという小さな成功を味わうと、世界の見え方が変わります。不安が、自信に変わる瞬間です。</P>
@@ -206,7 +206,7 @@ export default function EbookPage() {
                     </Chapter>
 
                     {/* おわりに */}
-                    <Chapter kicker="Epilogue" title="おわりに">
+                    <Chapter id="outro" kicker="Epilogue" title="おわりに">
                         <MangaPair a="outro-1" b="outro-2" alt="おわりに" />
                         <P>ここまで読んでくださって、本当にありがとうございます。</P>
                         <P>最後に、もう一度だけ伝えたいことがあります。あなたの競技人生は、決して無駄ではなかった、ということです。流した汗も、眠れなかった夜も、勝った喜びも、負けた悔しさも、そのすべてが、これから誰かの役に立つ資産に変わっていきます。あなたは、ゼロから何かを始めるのではありません。十二年ぶんの、誰にも真似できない素材を、すでに手にしているのです。</P>
