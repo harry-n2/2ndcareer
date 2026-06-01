@@ -23,11 +23,11 @@ function Chapter({ id, kicker, title, sub, children }: { id: string; kicker: str
                 <span className="h-[2px] w-10 bg-accent" />
                 <span className="text-sm font-bold uppercase tracking-widest text-accent">{kicker}</span>
             </div>
-            <h2 className="text-2xl font-black leading-tight text-primary md:text-3xl">{title}</h2>
-            {sub ? <p className="mt-2 text-base font-bold text-slate-500">{sub}</p> : null}
+            <h2 className="text-3xl font-black leading-snug text-primary md:text-4xl">{title}</h2>
+            {sub ? <p className="mt-3 text-lg font-bold text-slate-500 md:text-xl">{sub}</p> : null}
             {children}
             <div className="mt-12 text-center">
-                <a href="#top" className="inline-flex items-center gap-2 rounded-full border border-primary/20 px-6 py-2.5 text-sm font-bold text-primary transition-colors hover:border-accent hover:bg-primary hover:text-accent">
+                <a href="#top" className="inline-flex items-center gap-2 rounded-full border border-primary/20 px-7 py-3 text-base font-bold text-primary transition-colors hover:border-accent hover:bg-primary hover:text-accent">
                     ↑ トップに戻る
                 </a>
             </div>
@@ -36,7 +36,7 @@ function Chapter({ id, kicker, title, sub, children }: { id: string; kicker: str
 }
 
 function P({ children }: { children: React.ReactNode }) {
-    return <p className="mt-6 text-[1.02rem] leading-[2] text-slate-700">{children}</p>;
+    return <p className="mt-7 text-[1.2rem] leading-[2.05] text-slate-800 md:text-[1.35rem]">{children}</p>;
 }
 
 export default function EbookPage() {
@@ -84,8 +84,8 @@ export default function EbookPage() {
                             <span className="h-[2px] w-10 bg-accent" />
                             <span className="text-sm font-bold uppercase tracking-widest text-accent">Contents</span>
                         </div>
-                        <h2 className="text-2xl font-black text-primary md:text-3xl">もくじ</h2>
-                        <ol className="mt-6 space-y-3 text-slate-700">
+                        <h2 className="text-3xl font-black text-primary md:text-4xl">もくじ</h2>
+                        <ol className="mt-6 space-y-4 text-lg text-slate-700 md:text-xl">
                             <li><a href="#intro" className="transition-colors hover:text-accent">はじめに</a></li>
                             <li><a href="#ch1" className="transition-colors hover:text-accent">第1章　引退の日に気づいた現実。セカンドキャリアの壁</a></li>
                             <li><a href="#ch2" className="transition-colors hover:text-accent">第2章　あなたの競技経験は、売れる商品だ。ゼロから始めた男の話</a></li>
@@ -168,8 +168,8 @@ export default function EbookPage() {
                                 '再び売るためのテンプレートを残し、横に展開できるようにする。',
                             ].map((step, i) => (
                                 <li key={i} className="flex gap-4">
-                                    <span className="mt-1 w-7 shrink-0 text-right text-lg font-black tabular-nums text-accent">{String(i + 1).padStart(2, '0')}</span>
-                                    <span className="border-l border-slate-200 pl-4 text-[1.02rem] leading-[1.9] text-slate-700">{step}</span>
+                                    <span className="mt-1 w-9 shrink-0 text-right text-xl font-black tabular-nums text-accent">{String(i + 1).padStart(2, '0')}</span>
+                                    <span className="border-l border-slate-200 pl-4 text-lg leading-[1.95] text-slate-800 md:text-xl">{step}</span>
                                 </li>
                             ))}
                         </ol>
