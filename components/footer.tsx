@@ -34,6 +34,8 @@ export default function Footer() {
                             <li><Link href="/#curriculum" className="hover:text-white transition-colors">Curriculum</Link></li>
                             <li><Link href="/#mentors" className="hover:text-white transition-colors">Team</Link></li>
                             <li><Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                            <li><Link href="/ebook" className="hover:text-white transition-colors">電子書籍</Link></li>
+                            <li><Link href="/manga" className="hover:text-white transition-colors">電子マンガ</Link></li>
                             <li>
                                 <a
                                     href="https://ljpbqpwr5vbk.jp.larksuite.com/scheduler/96c06a2209d4e79e"

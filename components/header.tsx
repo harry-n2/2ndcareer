@@ -10,8 +10,9 @@ const navItems = [
     { label: 'Concept', href: '#concept' },
     { label: 'Curriculum', href: '#curriculum' },
     { label: 'Team', href: '#mentors' },
-    { label: 'Voice', href: '#voice' },
     { label: 'FAQ', href: '#faq' },
+    { label: '電子書籍', href: '/ebook' },
+    { label: '電子マンガ', href: '/manga' },
 ];
 
 export default function Header() {
