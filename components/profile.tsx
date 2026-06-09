@@ -18,19 +18,6 @@ const members = [
         ],
         desc: '東京と地方の二拠点で事業を展開。25年以上の実務経験を活かし「スポーツ×ビジネス×AI」の交差点で、元アスリート・指導者のセカンドキャリア支援に取り組む。',
     },
-    {
-        name: '池田 侑平',
-        role: 'アドバイザー',
-        org: '㈱ダイアモンドベリー 代表取締役',
-        image: '/2ndcareer/profile-ikeda.jpg',
-        credentials: [
-            '脱毛サロン3拠点経営（浜松・東京）',
-            '英会話スクール「ファーストラーニング浜松」運営',
-            'ロンドンでのサッカー・海外生活10年',
-            'J1清水エスパルス選手との関係構築',
-        ],
-        desc: 'ロンドンでのサッカー経験と10年の海外生活を経て帰国後、ゼロから起業。脱毛サロン・英会話スクールなど多角経営を実現。自身の「アスリート→起業家」の実体験で、選手のセカンドキャリアを伴走サポート。',
-    },
 ];
 
 export default function Profile() {
@@ -53,7 +40,7 @@ export default function Profile() {
                     </p>
                 </motion.div>
 
-                <div className="grid gap-12 md:grid-cols-2 max-w-4xl mx-auto">
+                <div className="grid gap-12 max-w-xl mx-auto">
                     {members.map((member, index) => (
                         <motion.div
                             key={member.name}

@@ -67,7 +67,7 @@ export default function EbookPage() {
                             サッカー選手の起業入門
                         </h1>
                         <p className="mt-4 text-lg text-slate-300">AIが経験を90日で講座に変える</p>
-                        <p className="mt-6 text-sm text-slate-400">著者　池田 侑平</p>
+                        <p className="mt-6 text-sm text-slate-400">著者　西野 直哉</p>
                     </div>
                 </Container>
                 <div className="mx-auto flex max-w-[420px] justify-center px-4 pb-14">
