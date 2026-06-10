@@ -3,7 +3,7 @@ import { Container } from '@/components/ui/container';
 import Footer from '@/components/footer';
 
 export const metadata = {
-    title: '電子書籍｜サッカー選手の起業入門 | ATHLETE NEXT',
+    title: '電子書籍｜アスリートのAI起業 | ATHLETE NEXT',
     description: 'AIが経験を90日で講座に変える。引退に揺れる選手の物語とともに読む、アスリートのためのセカンドキャリア起業入門。',
 };
 
@@ -64,7 +64,7 @@ export default function EbookPage() {
                     <div className="py-16 text-center md:py-20">
                         <p className="font-bold uppercase tracking-widest text-accent">E-Book</p>
                         <h1 className="mx-auto mt-3 max-w-3xl text-3xl font-black leading-tight md:text-5xl">
-                            サッカー選手の起業入門
+                            アスリートのAI起業
                         </h1>
                         <p className="mt-4 text-lg text-slate-300">AIが経験を90日で講座に変える</p>
                         <p className="mt-6 text-sm text-slate-400">著者　西野 直哉（Harry）</p>

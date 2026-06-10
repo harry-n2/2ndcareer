@@ -3,8 +3,8 @@ import { Container } from '@/components/ui/container';
 import Footer from '@/components/footer';
 
 export const metadata = {
-    title: '電子マンガ｜サッカー選手の起業入門 | ATHLETE NEXT',
-    description: 'マンガで読む「サッカー選手の起業入門」。引退に揺れる選手が、AIで経験を90日で講座に変えるまでの物語。',
+    title: '電子マンガ｜アスリートのAI起業 | ATHLETE NEXT',
+    description: 'マンガで読む「アスリートのAI起業」。引退に揺れる選手が、AIで経験を90日で講座に変えるまでの物語。',
 };
 
 // 読み順：表紙 → はじめに → もくじ → 本編（1〜12） → 背表紙
@@ -54,7 +54,7 @@ export default function MangaPage() {
                     <p className="font-bold uppercase tracking-widest text-accent">Comic</p>
                     <h1 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">電子マンガ</h1>
                     <p className="mt-4 text-slate-300">
-                        サッカー選手の起業入門<br className="md:hidden" />
+                        アスリートのAI起業<br className="md:hidden" />
                         <span className="text-slate-400">— AIが経験を90日で講座に変える —</span>
                     </p>
                 </div>
