@@ -7,24 +7,24 @@ export const metadata = {
     description: 'マンガで読む「サッカー選手の起業入門」。引退に揺れる選手が、AIで経験を90日で講座に変えるまでの物語。',
 };
 
-// 読み順：表紙 → もくじ → はじめに → 本編（第1〜5章） → おわりに → 背表紙
+// 読み順：表紙 → はじめに → もくじ → 本編（1〜12） → 背表紙
 const pages: { src: string; alt: string }[] = [
-    { src: 'cover', alt: '表紙　サッカー選手の起業入門' },
-    { src: 'toc', alt: 'もくじ' },
+    { src: 'cover', alt: '表紙' },
     { src: 'intro-1', alt: 'はじめに 1' },
     { src: 'intro-2', alt: 'はじめに 2' },
+    { src: 'toc', alt: 'もくじ' },
     { src: '1', alt: '第1章 1' },
     { src: '2', alt: '第1章 2' },
     { src: '3', alt: '第2章 1' },
     { src: '4', alt: '第2章 2' },
     { src: '5', alt: '第3章 1' },
     { src: '6', alt: '第3章 2' },
-    { src: '9', alt: '第4章 1' },
-    { src: '10', alt: '第4章 2' },
-    { src: '7', alt: '第5章 1' },
-    { src: '8', alt: '第5章 2' },
-    { src: 'outro-1', alt: 'おわりに 1' },
-    { src: 'outro-2', alt: 'おわりに 2' },
+    { src: '7', alt: '第4章 1' },
+    { src: '8', alt: '第4章 2' },
+    { src: '9', alt: '第5章 1' },
+    { src: '10', alt: '第5章 2' },
+    { src: '11', alt: 'おわりに 1' },
+    { src: '12', alt: 'おわりに 2' },
     { src: 'spine', alt: '背表紙' },
 ];
 
