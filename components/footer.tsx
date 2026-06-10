@@ -23,7 +23,7 @@ export default function Footer() {
                         </p>
                         <div className="mt-6 text-sm text-slate-500 space-y-1">
                             <p>事業者：ワールドトレードネクスト</p>
-                            <p>代表：西野 直哉</p>
+                            <p>代表：ハリー</p>
                         </div>
                     </div>
 

@@ -5,7 +5,7 @@ import { Container } from './ui/container';
 
 const members = [
     {
-        name: '西野 直哉（Harry）',
+        name: 'ハリー（Harry）',
         role: '代表 / 事業者',
         org: 'ワールドトレードネクスト',
         image: '/2ndcareer/profile-nishino.png',
